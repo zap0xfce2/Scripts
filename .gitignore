@@ -6,7 +6,7 @@
 *.swp
 *.out
 
-#IDE files to ignore (Netbeans, Eclipse, Xcode)
+#IDE files to ignore (Netbeans, Eclipse, Xcode, Titanium)
 nbproject/private/
 .classpath
 .project
@@ -20,6 +20,8 @@ build/
 *.mode1v3
 *.mode2v3
 xcuserdata
+tmp
+dist
 
 #ignore generated .class files
 *.class
