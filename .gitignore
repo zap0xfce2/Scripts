@@ -6,11 +6,20 @@
 *.swp
 *.out
 
-#IDE files to ignore (Netbeans, Eclipse)
+#IDE files to ignore (Netbeans, Eclipse, Xcode)
 nbproject/private/
 .classpath
 .project
 .settings
+*.swp
+*~.nib
+build/
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+xcuserdata
 
 #ignore generated .class files
 *.class
