@@ -1,0 +1,1 @@
+./firefox-linkgrabber.pl | grep download | grep lang=de > firefox-links.txt && wget -i firefox-links.txt && mv *os=win* /home/daten/Software/Windows/Firefox/Firefox-Windows.exe && mv *os=osx* /home/daten/Software/Macintosh/Firefox/Firefox-Mac.dmg && mv *os=linux* /home/daten/Software/Linux/Firefox/Firefox-Linux.tar.bz2 && rm firefox-links.txt
