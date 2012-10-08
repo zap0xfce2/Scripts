@@ -29,3 +29,6 @@ These Scripts are a Collection of Automatic Downloaders. In example: Firefox-Dow
 
 ## *-SoftwarePaket Scripts ##
 These Scripts are a Collection of Automatic Installers. Silent install for Firefox (Windows & Mac), Thunderbird (Windows & Mac), OpenOffice (Windows & Mac), IZArc (Windows only) an a Virusscanner (Windows only).
+
+## printc ##
+A simple script to output colorful messages to your bash. Usefull for bash installation scripts.  
