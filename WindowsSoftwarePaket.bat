@@ -1,10 +1,10 @@
 @echo off
 
 cls
+COLOR 02
 
 echo Folgende Programme werden Installiert: 
-echo Firefox, Thunderbird, OpenOffice, izArc, Virenscanner (mit Auswahl)
-COLOR 02
+echo Firefox, Thunderbird, LibreOffice, izArc, Virenscanner (mit Auswahl)
 
 pushd \\Pfad\zum\Programm\Firefox\
 Firefox-Windows.exe -ms
@@ -14,8 +14,8 @@ pushd \\Pfad\zum\Programm\Thunderbird\
 Thunderbird-Windows.exe -ms
 popd
 
-pushd \\Pfad\zum\Programm\OpenOffice\OpenOffice.org 3.3 (de) Installation Files\
-start /wait msiexec /qb /norestart /i openofficeorg33.msi SETUP_USED=1
+pushd \\Pfad\zum\Programm\LibreOffice\
+start /wait msiexec /qn /norestart /i LibO_3.6.5_Win_x86_install_multi.msi
 popd
 
 pushd \\Pfad\zum\Programm\Windows\IZArc\
