@@ -32,3 +32,12 @@ These Scripts are a Collection of Automatic Installers. Silent install for Firef
 
 ## printc ##
 A simple script to output colorful messages to your bash. Usefull for bash installation scripts.  
+
+## Refresh-XBMC-Config ##
+A little script to update your configuration on a running XBMC system like the raspberry pi.
+
+## GenerateGitChangeLog ##
+Generates a automatic CHANGELOG.TXT for your git projects. Just run ./GenerateGitChangeLog.py ~/MyProject/ and it will generate a changelog file in your MyProject folder.
+
+## TM-Statusmail ##
+With this little script you can receive status mails from your TimeMachine on your Mac. Usefull if you have a Mac Server without a monitor and you want to know if your data is backed up.
