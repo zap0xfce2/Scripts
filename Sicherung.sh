@@ -55,15 +55,16 @@ mkdir -p $ziel
 /bin/mount $mountparameter $externehdd $ziel
 
 # Wenn der Mountvorgang erfolgreich ist
-if (cat /proc/mounts | grep $ziel > 1)
+if [ "cat /proc/mounts | grep $ziel" ]
 then
    # Schreibe das Datum in die Logdatei (am Anfang)
    /bin/date > /var/log/$tag-sicherung.log
    # Kopiere und schreibe das Ergebnis in die Logdatei
-   /bin/cp -uRv $quelle/* $ziel >> /var/log/$tag-sicherung.log
+   #/bin/cp -uRv $quelle/* $ziel >> /var/log/$tag-sicherung.log
+   /usr/bin/rsync -av --delete $quelle $ziel >> /var/log/$tag-sicherung.log
    # Schreibe das Datum in die Logdatei (am Ende)
    /bin/date >> /var/log/$tag-sicherung.log
-   if ($sendonokay) 
+   if $sendonokay; 
     then
     # Sende die Erfolgsmail
     /bin/date | /usr/bin/mail -s "Starte die Sicherung des Servers: " $(hostname) -r $sendermail $adminmail
@@ -72,14 +73,14 @@ then
 else
    # Schreibe den Fehler in die Logdatei
    echo "Fehler beim Mounten :-(" >> /var/log/$tag-sicherung.log
-    if ($sendonfail)
+    if $sendonfail;
      then
      # Sende die Fehlermail
      /bin/date | /usr/bin/mail -s "Fehler beim Mounten auf Server: " $(hostname) -r $sendermail $adminmail
     fi
 fi
 
-if ($unmountonend) 
+if $unmountonend; 
  then
  # Unmounte das Ziel
  /bin/umount $ziel

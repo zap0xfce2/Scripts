@@ -3,8 +3,10 @@ use LWP::UserAgent;
 use HTML::LinkExtor;
 use URI::URL;
 
-# Pfad zur Seite
-$url = "http://spybot-download.net/";  # for instance
+# Beispielaufruf
+#./linkgrabber.pl "http://www.mozilla.com/en-US/firefox/all.html";  
+
+$url = $ARGV[0]; # Get Argument
 $ua = LWP::UserAgent->new;
 
   # Set up a callback that collect the links
