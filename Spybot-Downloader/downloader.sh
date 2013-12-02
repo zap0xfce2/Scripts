@@ -5,10 +5,10 @@
 #
 
 Software="Spybot"
-TargetPath="/home/daten/Software"
+TargetPath="/Users/Shared/Software"
 
 # Get the downloadlinks
-./linkgrabber.pl "http://spybot-download.net/" | grep exe > links.txt 
+lynx --dump http://spybot-download.net/ | awk '/(http):\/\// {print $2}' | grep exe > links.txt 
 
   if [ -f links.txt ]
    then

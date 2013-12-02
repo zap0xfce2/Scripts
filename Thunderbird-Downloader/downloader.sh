@@ -8,7 +8,9 @@ Software="Thunderbird"
 TargetPath="/home/daten/Software"
 
 # Get the downloadlinks
-./linkgrabber.pl "http://www.mozilla.org/en-US/thunderbird/all.html" | grep download | grep lang=de > links.txt 
+lynx --dump http://www.mozilla.org/en-US/thunderbird/all.html | awk '/(https):\/\// {print $2}' | grep download | grep lang=en-US > links.txt
+# Chose german as language
+perl -pi -e 's/lang=en-US/lang=de/g' links.txt
 
   if [ -f links.txt ]
    then
